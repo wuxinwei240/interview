@@ -123,9 +123,9 @@ const someFunction = (type, data) => {
 };
 
 const arr1 = [
-['o', 'e', 'e'],
-['e', 'x', 'o'],
-['x', 'x', 'e']
+    ['o', 'e', 'e'],
+    ['e', 'x', 'o'],
+    ['x', 'x', 'e']
 ];
 const arr2 = [
     ['x', 'o', 'o'],

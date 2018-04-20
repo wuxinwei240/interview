@@ -33,9 +33,10 @@ const someFunction = (type, data) => {
      * @param {Array} arr 数组
      */
     const commonIf = (hashObj, length, arr) => {
-        if(hashObj[type].length === length && hashObj.e.length === 1 && !eObj[hashObj.e[0].join('')]){
+        const str = hashObj.e[0].join('');
+        if(hashObj[type].length === length && hashObj.e.length === 1 && !eObj[str]){
             arr.push(hashObj.e[0]); 
-            eObj[hashObj.e[0].join('')] = 'e';
+            eObj[str] = 'e';
         }
     }
     /**

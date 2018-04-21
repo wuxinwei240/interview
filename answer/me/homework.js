@@ -25,7 +25,7 @@ const someFunction = (type, data) => {
         if(ele === 'e'){
             hashObj.e.push([y, x]);
         }
-    }
+    };
     /**
      * 共用判断
      * @param {object} hashObj  哈希对象
@@ -33,12 +33,12 @@ const someFunction = (type, data) => {
      * @param {Array} arr 数组
      */
     const commonIf = (hashObj, length, arr) => {
-        const str = hashObj.e[0].join('');
+        const str = hashObj.e[0] ? hashObj.e[0].join('') : '';
         if(hashObj[type].length === length && hashObj.e.length === 1 && !eObj[str]){
             arr.push(hashObj.e[0]); 
             eObj[str] = 'e';
         }
-    }
+    };
     /**
      * 行
      * @param {Number} j
@@ -53,7 +53,7 @@ const someFunction = (type, data) => {
         })
         commonIf(hashObj, data[j].length - 1, rowArr);
         hashObj = null;
-    }
+    };
     /**
      * 栏
      * @param {Number} i
@@ -72,7 +72,7 @@ const someFunction = (type, data) => {
         })
         commonIf(hashObj, dataLength - 1, colArr);
         hashObj = null;
-    }
+    };
     /**
      * 对角   对角分2种
      * 1.西北到东南方向
@@ -104,7 +104,7 @@ const someFunction = (type, data) => {
         commonIf(hashObj2, dataLength - 1, diagonalArr);
         hashObj1 = null;
         hashObj2 = null;
-    }
+    };
     data.forEach((ele, j) => {
         ele.forEach((childEle, i) => { 
             if(childEle === type) {
@@ -142,8 +142,16 @@ const arr4 = [
     ['e', 'e', 'e'],
     ['e', 'e', 'e']
 ];
-const result1 = someFunction('x', arr1);
-const result2 = someFunction('x', arr2);
-const result3 = someFunction('x', arr3);
-const result4 = someFunction('o', arr4);
-console.log(result1, result2, result3, result4)
+const arr5 = [
+ ["x", "x", "e","x"],
+ ["x", "x", "x", "o"],
+ ["e", "e", "o", "o"],
+ ["x", "e", "e", "o"]
+];
+// const result1 = someFunction('x', arr1);
+// const result2 = someFunction('x', arr2);
+// const result3 = someFunction('x', arr3);
+// const result4 = someFunction('o', arr4);
+const result5 = someFunction('x', arr5);
+console.log(result5);
+// console.log(result1, result2, result3, result4)
